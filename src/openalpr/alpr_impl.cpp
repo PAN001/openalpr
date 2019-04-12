@@ -440,9 +440,10 @@ namespace alpr
     }
   }
 
+  // TODO: Step 0: recognize
   AlprResults AlprImpl::recognize( unsigned char* pixelData, int bytesPerPixel, int imgWidth, int imgHeight, std::vector<AlprRegionOfInterest> regionsOfInterest)
   {
-
+    std::cout << "AlprImpl::recognize" << endl;
     try
     {
       int arraySize = imgWidth * imgHeight * bytesPerPixel;
