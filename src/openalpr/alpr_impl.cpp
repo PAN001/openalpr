@@ -83,8 +83,10 @@ namespace alpr
   }
 
 
+  // TODO: Step 0-1: recognize
   AlprFullDetails AlprImpl::recognizeFullDetails(cv::Mat img, std::vector<cv::Rect> regionsOfInterest)
   {
+    std::cout << "========================== AlprImpl::recognizeFullDetails ==========================" << endl;
     timespec startTime;
     getTimeMonotonic(&startTime);
 
@@ -214,8 +216,10 @@ namespace alpr
     return response;
   }
 
+  // TODO: Step 0-2: recognize
   AlprFullDetails AlprImpl::analyzeSingleCountry(cv::Mat colorImg, cv::Mat grayImg, std::vector<cv::Rect> warpedRegionsOfInterest)
   {
+    std::cout << "========================== AlprImpl::analyzeSingleCountry ==========================" << endl;
     AlprFullDetails response;
     
     AlprRecognizers country_recognizers = recognizers[config->country];
@@ -421,6 +425,7 @@ namespace alpr
     }
   }
 
+  // TODO: Step 0-0: recognize
   AlprResults AlprImpl::recognize(std::vector<char> imageBytes, std::vector<AlprRegionOfInterest> regionsOfInterest)
   {
     try
@@ -443,7 +448,7 @@ namespace alpr
   // TODO: Step 0: recognize
   AlprResults AlprImpl::recognize( unsigned char* pixelData, int bytesPerPixel, int imgWidth, int imgHeight, std::vector<AlprRegionOfInterest> regionsOfInterest)
   {
-    std::cout << "AlprImpl::recognize" << endl;
+    std::cout << "========================== AlprImpl::recognize ==========================" << endl;
     try
     {
       int arraySize = imgWidth * imgHeight * bytesPerPixel;
