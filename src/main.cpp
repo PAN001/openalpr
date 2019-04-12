@@ -282,6 +282,7 @@ int main( int argc, const char** argv )
     {
       if (fileExists(filename.c_str()))
       {
+        std::cout << "Here" << std::endl; 
         frame = cv::imread(filename);
 
         bool plate_found = detectandshow(&alpr, frame, "", outputJson);
@@ -350,6 +351,7 @@ bool detectandshow( Alpr* alpr, cv::Mat frame, std::string region, bool writeJso
   }
   else regionsOfInterest.push_back(AlprRegionOfInterest(0, 0, frame.cols, frame.rows));
   AlprResults results;
+  // TODO: Step 0: recognize
   if (regionsOfInterest.size()>0) results = alpr->recognize(frame.data, frame.elemSize(), frame.cols, frame.rows, regionsOfInterest);
 
   timespec endTime;
