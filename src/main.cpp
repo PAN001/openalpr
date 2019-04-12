@@ -57,6 +57,7 @@ bool program_active = true;
 
 int main( int argc, const char** argv )
 {
+  std::cout << "starts" << std::endl;
   std::vector<std::string> filenames;
   std::string configFile = "";
   bool outputJson = false;
