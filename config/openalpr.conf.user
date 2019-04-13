@@ -90,5 +90,5 @@ debug_show_images     = 0
 debug_pause_on_frame  = 0
 
 
-
+analysis_threads = 4
 
